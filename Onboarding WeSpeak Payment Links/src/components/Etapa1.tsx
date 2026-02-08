@@ -105,9 +105,14 @@ export function Etapa1() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-              <div>
+              <div className="flex items-start gap-3 relative">
+                <Clock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                <div
+                  onMouseEnter={() => setShowCheckInPopup(true)}
+                  onMouseLeave={() => setShowCheckInPopup(false)}
+                  className="cursor-pointer relative"
+                  >
+                  
                 <p className="font-medium text-gray-900">Horarios de check-in y check-out</p>
                 <p className="text-sm text-gray-600">Ejemplo: Check-in desde las 15:00 hrs / Check-out hasta las 11:00 hrs</p>
 
