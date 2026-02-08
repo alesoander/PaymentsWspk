@@ -23,6 +23,7 @@ export function Etapa1() {
   const [showPoliticaPopup, setShowPoliticaPopup] = useState(false);
   const [showImpuestoPopup, setImpuestoPopup] = useState(false);
   const [showContactoPopup, setContactoPopup] = useState(false);
+  const [showMercadoPagoPopup, setShowMercadoPagoPopup] = useState(false);
 
   const toggleCheck = (key: keyof typeof checklist) => {
     setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
@@ -285,16 +286,48 @@ export function Etapa1() {
           <h4 className="font-semibold text-gray-900 mb-4">Métodos disponibles:</h4>
           <div className="grid sm:grid-cols-2 gap-4">
             {metodosDepago.map((metodo, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <CreditCard className="w-4 h-4 text-blue-600" />
+              <div 
+                key={index} 
+                className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors relative"
+              >
+                {/* Check if it's Mercado Pago to add special behavior */}
+                {metodo.name === 'Mercado Pago' ? (
+                  <a
+                    href="https://kommodo.ai/v/9ukFx187VQ7MCQzoDZZ4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={() => setShowMercadoPagoPopup(true)}
+                    onMouseLeave={() => setShowMercadoPagoPopup(false)}
+                    className="flex items-start gap-3 cursor-pointer hover:opacity-80 transition-opacity"
+                  >
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CreditCard className="w-4 h-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-900">{metodo.name}</p>
+                      <p className="text-xs text-gray-600 mt-1">{metodo.desc}</p>
+                    </div>
+                    
+                    {/* Popup for Mercado Pago */}
+                    {showMercadoPagoPopup && (
+                      <div className="absolute z-50 top-full mt-2 left-4 px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg shadow-lg whitespace-nowrap">
+                        Clic para ver tutorial
+                        <div className="absolute -top-1 left-4 w-2 h-2 bg-blue-600 transform rotate-45"></div>
+                      </div>
+                    )}
+                  </a>
+                ) : (
+                  // Regular display for other payment methods
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CreditCard className="w-4 h-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-900">{metodo.name}</p>
+                      <p className="text-xs text-gray-600 mt-1">{metodo.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-medium text-gray-900">{metodo.name}</p>
-                    <p className="text-xs text-gray-600 mt-1">{metodo.desc}</p>
-                  </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
