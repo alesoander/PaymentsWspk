@@ -137,8 +137,8 @@ export function Etapa1() {
             <div className="flex items-start gap-3 relative">
                 <Clock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
                 <div
-                  onMouseEnter={() => setPoliticaPopup(true)}
-                  onMouseLeave={() => setPoliticaPopup(false)}
+                  onMouseEnter={() => setShowPoliticaPopup(true)}
+                  onMouseLeave={() => setShowPoliticaPopup(false)}
                   className="cursor-pointer relative"
                   >
                 <p className="font-medium text-gray-900">Políticas de cancelación</p>
@@ -148,7 +148,7 @@ export function Etapa1() {
                   <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
                     <img 
                       src="https://lh3.googleusercontent.com/d/1qeLd5Xf_IjyxUu_kR8LbdpF4NyMshJ7l" 
-                      alt="Ejemplo de Politica en plataforma"
+                      alt="Ejemplo de Política en plataforma"
                       className="w-full h-auto rounded"
                     />
                   </div>
