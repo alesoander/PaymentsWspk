@@ -20,6 +20,9 @@ export function Etapa1() {
 
   const [showPopup, setShowPopup] = useState(false);
   const [showCheckInPopup, setShowCheckInPopup] = useState(false); 
+  const [showPoliticaPopup, setShowPoliticaPopup] = useState(false);
+  const [showImpuestoPopup, setImpuestoPopup] = useState(false);
+  const [showContactoPopup, setContactoPopup] = useState(false);
 
   const toggleCheck = (key: keyof typeof checklist) => {
     setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
@@ -83,6 +86,8 @@ export function Etapa1() {
         <div className="ml-0 sm:ml-13 bg-gray-50 rounded-xl p-6 border border-gray-200">
           <h4 className="font-semibold text-gray-900 mb-4">Información requerida:</h4>
           <div className="grid gap-4">
+            
+            
             <div className="flex items-start gap-3 relative">
               <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
               <div
@@ -129,27 +134,76 @@ export function Etapa1() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3">
-              <XCircle className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-              <div>
+            <div className="flex items-start gap-3 relative">
+                <Clock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                <div
+                  onMouseEnter={() => setPoliticaPopup(true)}
+                  onMouseLeave={() => setPoliticaPopup(false)}
+                  className="cursor-pointer relative"
+                  >
                 <p className="font-medium text-gray-900">Políticas de cancelación</p>
                 <p className="text-sm text-gray-600">Define bajo qué condiciones se puede cancelar y si hay devolución</p>
+
+                  {showPoliticaPopup && (
+                  <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
+                    <img 
+                      src="https://lh3.googleusercontent.com/d/IjyxUu_kR8LbdpF4NyMshJ7l" 
+                      alt="Ejemplo de Checkin/out en plataforma"
+                      className="w-full h-auto rounded"
+                    />
+                  </div>
+                )}
+
+                  
               </div>
             </div>
 
-            <div className="flex items-start gap-3">
-              <DollarSign className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-              <div>
+            <div className="flex items-start gap-3 relative">
+                <Clock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                <div
+                  onMouseEnter={() => setImpuestoPopup(true)}
+                  onMouseLeave={() => setImpuestoPopup(false)}
+                  className="cursor-pointer relative"
+                  >
+                  
                 <p className="font-medium text-gray-900">Impuestos aplicables</p>
                 <p className="text-sm text-gray-600">Impuestos locales, tasas turísticas o cargos adicionales</p>
+
+                {showImpuestoPopup && (
+                  <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
+                    <img 
+                      src="https://lh3.googleusercontent.com/d/12IqsEYCkds-5i0Cw3eEUea5JKJynwhLLl" 
+                      alt="Ejemplo de Impuesto en plataforma"
+                      className="w-full h-auto rounded"
+                    />
+                  </div>
+                )}
+                  
               </div>
             </div>
 
-            <div className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-              <div>
+             <div className="flex items-start gap-3 relative">
+                <Clock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                <div
+                  onMouseEnter={() => setContactoPopup(true)}
+                  onMouseLeave={() => setContactoPopup(false)}
+                  className="cursor-pointer relative"
+                  >
+                  
                 <p className="font-medium text-gray-900">Información de Contacto para el Checkout</p>
                 <p className="text-sm text-gray-600">Teléfonos, WhatsApp, correos electrónicos, redes sociales, etc.</p>
+
+                  {showContactoPopup && (
+                  <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
+                    <img 
+                      src="https://lh3.googleusercontent.com/d/1zvPs7fwbGC05IeU6dg0WDAY307yex9bB" 
+                      alt="Ejemplo de Contacto en plataforma"
+                      className="w-full h-auto rounded"
+                    />
+                  </div>
+                )}
+
+                  
               </div>
             </div>
           </div>
