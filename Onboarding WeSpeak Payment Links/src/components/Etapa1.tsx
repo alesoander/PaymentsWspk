@@ -310,7 +310,11 @@ export function Etapa1() {
                     
                     {/* Popup for Mercado Pago */}
                     {showMercadoPagoPopup && (
-                      <div className="absolute z-50 top-full mt-2 left-4 px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg shadow-lg whitespace-nowrap">
+                      <div 
+                        className="absolute z-50 top-full mt-2 left-4 px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg shadow-lg whitespace-nowrap"
+                        role="tooltip"
+                        aria-label="Clic para ver tutorial"
+                      >
                         Clic para ver tutorial
                         <div className="absolute -top-1 left-4 w-2 h-2 bg-blue-600 transform rotate-45"></div>
                       </div>
