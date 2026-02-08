@@ -83,8 +83,8 @@ export function Etapa1() {
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-medium text-gray-900">Nombre del complejo y ubicación</p>
-                <p className="text-sm text-gray-600">Nombre oficial y dirección completa de tu hotel</p>
+                <p className="font-medium text-gray-900">Ubicación del complejo</p>
+                <p className="text-sm text-gray-600">Dirección completa de tu hotel junto con el mapa</p>
               </div>
             </div>
 
