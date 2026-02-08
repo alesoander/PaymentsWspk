@@ -24,6 +24,7 @@ export function Etapa1() {
   const [showImpuestoPopup, setImpuestoPopup] = useState(false);
   const [showContactoPopup, setContactoPopup] = useState(false);
   const [showMercadoPagoPopup, setShowMercadoPagoPopup] = useState(false);
+  const [showDepositoPopup, setShowDepositoPopup] = useState(false);
 
   const toggleCheck = (key: keyof typeof checklist) => {
     setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
@@ -230,13 +231,32 @@ export function Etapa1() {
         <div className="ml-0 sm:ml-13 bg-gray-50 rounded-xl p-6 border border-gray-200">
           <h4 className="font-semibold text-gray-900 mb-4">Opciones de cobro:</h4>
           <div className="space-y-4">
-            <div className="bg-white p-4 rounded-lg border border-gray-200">
+
+            
+            <div className="bg-white p-4 rounded-lg border border-gray-200 relative">
+              <div
+                  onMouseEnter={() => setShowDepositoPopup(true)}
+                  onMouseLeave={() => setShowDepositoPopup(false)}
+                  className="cursor-pointer relative"
+                >
+              
               <p className="font-medium text-gray-900 mb-1">Depósito parcial</p>
               <p className="text-sm text-gray-600">
                 Requiere un porcentaje o monto fijo para confirmar la reserva. 
                 El resto se paga al llegar o al momento del check-out.
               </p>
               <p className="text-xs text-gray-500 mt-2">Ejemplo: 30% del total o $50 USD</p>
+                
+              {showDepositoPopup && (
+                  <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
+                    <img 
+                      src="https://lh3.googleusercontent.com/d/1fQceuy9AUpex3cU_rW5o5dwELOpKn-R6" 
+                      alt="Ejemplo de depósito parcial"
+                      className="w-full h-auto rounded"
+                            />
+                        </div>
+                        )}
+                  </div>
             </div>
 
             <div className="bg-white p-4 rounded-lg border border-gray-200">
