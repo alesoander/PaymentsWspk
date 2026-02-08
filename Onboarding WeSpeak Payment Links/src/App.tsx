@@ -114,7 +114,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500 text-sm">
-        <p>© 2026 WeSpeak - Plataforma de gestión hotelera y pagos digitales</p>
+        <p>© 2026 WeSpeak - El sistema de ventas para hoteles que utilizan WhatsApp</p>
       </footer>
     </div>
   );
