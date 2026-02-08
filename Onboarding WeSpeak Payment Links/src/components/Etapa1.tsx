@@ -18,6 +18,8 @@ export function Etapa1() {
     restricciones: false
   });
 
+  const [showPopup, setShowPopup] = useState(false);
+
   const toggleCheck = (key: keyof typeof checklist) => {
     setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
   };
@@ -80,11 +82,25 @@ export function Etapa1() {
         <div className="ml-0 sm:ml-13 bg-gray-50 rounded-xl p-6 border border-gray-200">
           <h4 className="font-semibold text-gray-900 mb-4">Información requerida:</h4>
           <div className="grid gap-4">
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-3 relative">
               <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-              <div>
+              <div
+                onMouseEnter={() => setShowPopup(true)}
+                onMouseLeave={() => setShowPopup(false)}
+                className="cursor-pointer"
+              >
                 <p className="font-medium text-gray-900">Ubicación del complejo</p>
                 <p className="text-sm text-gray-600">Dirección completa de tu hotel junto con el mapa</p>
+                
+                {showPopup && (
+                  <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl">
+                    <img 
+                      src="https://drive.google.com/uc?export=view&id=1HsRNPMTVsRnRPb6eYcsy1ZZ1nvpPTi68" 
+                      alt="Ejemplo de ubicación"
+                      className="max-w-md w-full h-auto rounded"
+                    />
+                  </div>
+                )}
               </div>
             </div>
 
@@ -288,9 +304,7 @@ export function Etapa1() {
               onChange={() => toggleCheck('info')}
               className="mt-1 w-5 h-5 rounded border-gray-300 text-green-600 focus:ring-green-500"
             />
-            <span className={`flex-1 ${checklist.info ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
-              Toda la información del hotel está cargada en WeSpeak (nombre, ubicación, horarios, políticas, impuestos)
-            </span>
+            <span className={`flex-1 ${checklist.info ? 'text-gray-500 line-through' : 'text-gray-900'}`}>Toda la información del hotel está cargada en WeSpeak (nombre, ubicación, horarios, políticas, impuestos)</span>
           </label>
 
           <label className="flex items-start gap-3 cursor-pointer group">
@@ -300,9 +314,7 @@ export function Etapa1() {
               onChange={() => toggleCheck('depositos')}
               className="mt-1 w-5 h-5 rounded border-gray-300 text-green-600 focus:ring-green-500"
             />
-            <span className={`flex-1 ${checklist.depositos ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
-              He definido las reglas de depósito y cobro (total o parcial)
-            </span>
+            <span className={`flex-1 ${checklist.depositos ? 'text-gray-500 line-through' : 'text-gray-900'}`}>He definido las reglas de depósito y cobro (total o parcial)</span>
           </label>
 
           <label className="flex items-start gap-3 cursor-pointer group">
@@ -312,9 +324,7 @@ export function Etapa1() {
               onChange={() => toggleCheck('metodos')}
               className="mt-1 w-5 h-5 rounded border-gray-300 text-green-600 focus:ring-green-500"
             />
-            <span className={`flex-1 ${checklist.metodos ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
-              He conectado al menos un método de pago (Mercado Pago, Stripe, Almacenar datos de tarjeta, etc.) con credenciales correctas
-            </span>
+            <span className={`flex-1 ${checklist.metodos ? 'text-gray-500 line-through' : 'text-gray-900'}`}>He conectado al menos un método de pago (Mercado Pago, Stripe, Almacenar datos de tarjeta, etc.) con credenciales correctas</span>
           </label>
 
           <label className="flex items-start gap-3 cursor-pointer group">
@@ -324,9 +334,7 @@ export function Etapa1() {
               onChange={() => toggleCheck('restricciones')}
               className="mt-1 w-5 h-5 rounded border-gray-300 text-green-600 focus:ring-green-500"
             />
-            <span className={`flex-1 ${checklist.restricciones ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
-              Entiendo que en esta etapa los enlaces solo se generan manualmente desde el cotizador
-            </span>
+            <span className={`flex-1 ${checklist.restricciones ? 'text-gray-500 line-through' : 'text-gray-900'}`}>Entiendo que en esta etapa los enlaces solo se generan manualmente desde el cotizador</span>
           </label>
         </div>
 
