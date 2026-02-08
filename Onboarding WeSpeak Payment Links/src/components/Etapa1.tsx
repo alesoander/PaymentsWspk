@@ -147,8 +147,8 @@ export function Etapa1() {
                   {showPoliticaPopup && (
                   <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
                     <img 
-                      src="https://lh3.googleusercontent.com/d/IjyxUu_kR8LbdpF4NyMshJ7l" 
-                      alt="Ejemplo de Checkin/out en plataforma"
+                      src="https://lh3.googleusercontent.com/d/1qeLd5Xf_IjyxUu_kR8LbdpF4NyMshJ7l" 
+                      alt="Ejemplo de Politica en plataforma"
                       className="w-full h-auto rounded"
                     />
                   </div>
@@ -172,7 +172,7 @@ export function Etapa1() {
                 {showImpuestoPopup && (
                   <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
                     <img 
-                      src="https://lh3.googleusercontent.com/d/12IqsEYCkds-5i0Cw3eEUea5JKJynwhLLl" 
+                      src="https://lh3.googleusercontent.com/d/12IqsEYCkds-5i0Cw3eEUea5JKJynwhLL" 
                       alt="Ejemplo de Impuesto en plataforma"
                       className="w-full h-auto rounded"
                     />
