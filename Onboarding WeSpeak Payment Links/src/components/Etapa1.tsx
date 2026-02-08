@@ -95,7 +95,7 @@ export function Etapa1() {
                 {showPopup && (
                   <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
                     <img 
-                      src="https://drive.google.com/uc?export=view&id=1HsRNPMTVsRnRPb6eYcsy1ZZ1nvpPTi68" 
+                      src="https://lh3.googleusercontent.com/d/1HsRNPMTVsRnRPb6eYcsy1ZZ1nvpPTi68" 
                       alt="Ejemplo de ubicación"
                       className="w-full h-auto rounded"
                     />
