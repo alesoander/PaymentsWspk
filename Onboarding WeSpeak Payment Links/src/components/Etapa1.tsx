@@ -262,8 +262,8 @@ export function Etapa1() {
 
             <div className="bg-white p-4 rounded-lg border border-gray-200 relative">
               <div
-                  onMouseEnter={() => setShowDepositoPopup(true)}
-                  onMouseLeave={() => setShowDepositoPopup(false)}
+                  onMouseEnter={() => setShowNoDepositoPopup(true)}
+                  onMouseLeave={() => setShowNoDepositoPopup(false)}
                   className="cursor-pointer relative"
                 >
               <p className="font-medium text-gray-900 mb-1">Pago total anticipado</p>
