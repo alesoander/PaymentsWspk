@@ -275,7 +275,7 @@ export function Etapa1() {
                 {showNoDepositoPopup && (
                   <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
                     <img 
-                      src="https://lh3.googleusercontent.com/d/1fQceuy9AUpex3cU_rW5o5dwELOpKn-R6" 
+                      src="https://lh3.googleusercontent.com/d/1wqHLJQkcDvyaYF1Q5Fedi9_-RoFXktZs" 
                       alt="Ejemplo de No depósito parcial"
                       className="w-full h-auto rounded"
                             />
