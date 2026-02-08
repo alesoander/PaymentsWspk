@@ -28,7 +28,7 @@ export function Etapa1() {
     { name: 'PayU', desc: 'Plataforma de pagos para mercados emergentes' },
     { name: 'PayPal', desc: 'Sistema de pagos internacional reconocido' },
     { name: 'dLocal', desc: 'Procesador especializado en mercados locales' },
-    { name: 'Almacenamiento de tarjeta', desc: 'Guardar datos de tarjeta de forma segura' },
+    { name: 'Almacenamiento de tarjeta', desc: 'Guardar datos de tarjeta de forma segura, para el débito manual' },
     { name: 'Transferencia bancaria', desc: 'Pago directo a cuenta del hotel' }
   ];
 
