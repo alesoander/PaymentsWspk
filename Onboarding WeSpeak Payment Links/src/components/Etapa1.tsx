@@ -115,8 +115,8 @@ export function Etapa1() {
             <div className="flex items-start gap-3">
               <AlertCircle className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-medium text-gray-900">Políticas generales del establecimiento</p>
-                <p className="text-sm text-gray-600">Normas sobre mascotas, fumar, eventos, etc.</p>
+                <p className="font-medium text-gray-900">Información de Contacto para el Checkout</p>
+                <p className="text-sm text-gray-600">Teléfonos, WhatsApp, correos electrónicos, redes sociales, etc.</p>
               </div>
             </div>
           </div>
@@ -160,9 +160,10 @@ export function Etapa1() {
             </div>
 
             <div className="bg-white p-4 rounded-lg border border-gray-200">
-              <p className="font-medium text-gray-900 mb-1">Sin depósito</p>
+              <p className="font-medium text-gray-900 mb-1">Valor de Primera Noche</p>
               <p className="text-sm text-gray-600">
-                La reserva se confirma sin pago previo. El cobro se realiza en el hotel.
+                Requiere el pago del valor aproximado de la primera noche. 
+                El resto se paga al llegar o al momento del chec-kout.
               </p>
               <p className="text-xs text-gray-500 mt-2">Mayor riesgo de no-shows</p>
             </div>
@@ -171,7 +172,7 @@ export function Etapa1() {
           <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
             <p className="text-sm text-yellow-800">
               <strong>Recomendación:</strong> Define claramente tu política antes de continuar. 
-              Puedes usar diferentes reglas según la temporada o tipo de habitación.
+              Estas reglas aplicarán para el total de las reservas realizadas por el enlace.
             </p>
           </div>
         </div>
@@ -218,8 +219,8 @@ export function Etapa1() {
             <ol className="text-sm text-blue-800 space-y-1 ml-4 list-decimal">
               <li>Crea una cuenta en la plataforma de pago elegida (ej: Mercado Pago)</li>
               <li>Obtén tus credenciales o API keys desde el panel de la plataforma</li>
-              <li>Ingresa esas credenciales en la sección de pagos de WeSpeak</li>
-              <li>Verifica que la conexión sea exitosa</li>
+              <li>Ingresa esas credenciales en la sección de métodos de pagos de WeSpeak</li>
+              <li>Verifica que las credenciales sean correctas</li>
             </ol>
           </div>
 
@@ -227,7 +228,7 @@ export function Etapa1() {
             <p className="text-sm text-red-900">
               <strong>⚠️ Advertencia:</strong> Asegúrate de usar credenciales de PRODUCCIÓN 
               (no de prueba) cuando estés listo para recibir pagos reales. Las credenciales 
-              de prueba solo sirven para validar que todo funciona correctamente.
+               sirven para enlazar correctamente los pagos hacia tus cuentas.
             </p>
           </div>
         </div>
@@ -300,7 +301,7 @@ export function Etapa1() {
               className="mt-1 w-5 h-5 rounded border-gray-300 text-green-600 focus:ring-green-500"
             />
             <span className={`flex-1 ${checklist.depositos ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
-              He definido las reglas de depósito y cobro (total, parcial o sin depósito)
+              He definido las reglas de depósito y cobro (total o parcial)
             </span>
           </label>
 
@@ -312,7 +313,7 @@ export function Etapa1() {
               className="mt-1 w-5 h-5 rounded border-gray-300 text-green-600 focus:ring-green-500"
             />
             <span className={`flex-1 ${checklist.metodos ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
-              He conectado al menos un método de pago (Mercado Pago, Stripe, PayPal, etc.) con credenciales correctas
+              He conectado al menos un método de pago (Mercado Pago, Stripe, Almacenar datos de tarjeta, etc.) con credenciales correctas
             </span>
           </label>
 
