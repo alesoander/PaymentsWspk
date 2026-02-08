@@ -25,6 +25,7 @@ export function Etapa1() {
   const [showContactoPopup, setContactoPopup] = useState(false);
   const [showMercadoPagoPopup, setShowMercadoPagoPopup] = useState(false);
   const [showDepositoPopup, setShowDepositoPopup] = useState(false);
+  const [showNoDepositoPopup, setShowNoDepositoPopup] = useState(false);
 
   const toggleCheck = (key: keyof typeof checklist) => {
     setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
@@ -259,12 +260,29 @@ export function Etapa1() {
                   </div>
             </div>
 
-            <div className="bg-white p-4 rounded-lg border border-gray-200">
+            <div className="bg-white p-4 rounded-lg border border-gray-200 relative">
+              <div
+                  onMouseEnter={() => setShowDepositoPopup(true)}
+                  onMouseLeave={() => setShowDepositoPopup(false)}
+                  className="cursor-pointer relative"
+                >
               <p className="font-medium text-gray-900 mb-1">Pago total anticipado</p>
               <p className="text-sm text-gray-600">
                 El huésped paga el 100% de la estadía al momento de reservar.
               </p>
               <p className="text-xs text-gray-500 mt-2">Recomendado para temporada alta</p>
+                
+                {showNoDepositoPopup && (
+                  <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
+                    <img 
+                      src="https://lh3.googleusercontent.com/d/1fQceuy9AUpex3cU_rW5o5dwELOpKn-R6" 
+                      alt="Ejemplo de No depósito parcial"
+                      className="w-full h-auto rounded"
+                            />
+                        </div>
+                        )}
+                  </div>
+                
             </div>
 
             <div className="bg-white p-4 rounded-lg border border-gray-200">
