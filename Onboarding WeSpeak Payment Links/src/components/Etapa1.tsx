@@ -19,6 +19,7 @@ export function Etapa1() {
   });
 
   const [showPopup, setShowPopup] = useState(false);
+  const [showCheckInPopup, setShowCheckInPopup] = useState(false); 
 
   const toggleCheck = (key: keyof typeof checklist) => {
     setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
@@ -110,7 +111,7 @@ export function Etapa1() {
                 <p className="font-medium text-gray-900">Horarios de check-in y check-out</p>
                 <p className="text-sm text-gray-600">Ejemplo: Check-in desde las 15:00 hrs / Check-out hasta las 11:00 hrs</p>
 
-                  {showPopup && (
+                  {showCheckInPopup && (
                   <div className="absolute z-50 mt-2 p-2 bg-white border-2 border-gray-300 rounded-lg shadow-2xl left-0 max-w-sm sm:max-w-md">
                     <img 
                       src="https://lh3.googleusercontent.com/d/182Ta3cy4hOAW6MJD4EgRuMp70KDPX5Az" 
