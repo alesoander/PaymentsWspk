@@ -10,6 +10,89 @@
     <body>
       <div id="root"></div>
       <script type="module" src="/src/main.tsx"></script>
+
+
+      
+      <div id="wespeak-whatsapp-button">
+  <div
+    id="wapp-button"
+    style="
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      height: auto;
+      overflow: hidden;
+      visibility: visible;
+      z-index: 99999999;
+      background: transparent;
+      border: 0px;
+      transition: transform 0.2s ease-in-out;
+      backface-visibility: hidden;
+    "
+  >
+    <a id="whatsapp-message" target="_blank" href="https://api.whatsapp.com/send?phone=5493446645873&text=Hola!%20Necesito%20ayuda%20con%20WeSpeak%20Payments%20&context=advertisingcode&source_url=https%3A%2F%2Fejemplo.com">
+      <picture>
+        <!-- Mobile image (max-width: 480px) -->
+          <source
+            media="(max-width: 480px)"
+            srcset="https://d2txcta0d7tijy.cloudfront.net/wespeak/whatsapp.png"
+          />
+          <!-- Tablet image (max-width: 1024px) -->
+          <source
+            media="(max-width: 1024px)"
+            srcset="https://d2txcta0d7tijy.cloudfront.net/wespeak/whatsapp.png"
+          />
+          <!-- Default/desktop image -->
+          <img
+            src="https://d2txcta0d7tijy.cloudfront.net/wespeak/right.png"
+            alt="botão do whatsapp"
+          />
+      </picture>
+    </a>
+  </div>
+  <style>
+    /* Mobile sizes */
+    @media screen and (max-width: 480px) {
+      #wapp-button {
+        width: 80px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+      #wapp-button img {
+        width: 80px;
+      }
+    }
+    
+    /* Tablet sizes */
+    @media screen and (min-width: 481px) and (max-width: 1024px) {
+      #wapp-button {
+        width: 80px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+      #wapp-button img {
+        width: 80px;
+      }
+    }
+    /* Desktop sizes */
+    @media screen and (min-width: 1025px) {
+      #wapp-button {
+        width: 320px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+      }
+      #wapp-button img {
+        width: 320px;
+      }
+    }
+  </style>
+</div>
+
+
+      
     </body>
   </html>
   
